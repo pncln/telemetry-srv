@@ -2,7 +2,7 @@ import express from 'express';
 import http from 'http';
 import { Server as socketio } from 'socket.io';
 import events from 'events'
-import { getFirestore, collection, addDoc, setDoc, doc } from "firebase/firestore";
+import { getFirestore, connectFirestoreEmulator, collection, addDoc, setDoc, doc } from "firebase/firestore";
 // import firebase from 'firebase/compat/app';
 // import 'firebase/compat/auth';
 import auth from './apis/firebase.js'
@@ -21,6 +21,7 @@ const localEmitter = new events.EventEmitter();
 //     appId: process.env.REACT_APP_FIREBASE_APP_ID
 // });
 const db = getFirestore(app);
+connectFirestoreEmulator(db, 'localhost', 8080);
 
 server.listen(3000, async () => {
     console.log('Listening on port 3000');
