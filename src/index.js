@@ -46,6 +46,7 @@ websocket.on('connection' , (socket) => {
                 altitude: loc.coords.altitude,
                 heading: loc.coords.heading,
                 altitudeAccuracy: loc.coords.altitudeAccuracy,
+                latitude: loc.coords.latitude,
                 speed : loc.coords.speed,
                 longitude : loc.coords.longitude,
                 accuracy : loc.coords.accuracy
