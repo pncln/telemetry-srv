@@ -13,7 +13,7 @@ const websocket = new socketio(server);
 const localEmitter = new events.EventEmitter();
 
 const db = getFirestore(app);
-connectFirestoreEmulator(db, 'localhost', 8080);
+connectFirestoreEmulator(db, 'localhost', 8081);
 
 const interpolate = () => {
 
